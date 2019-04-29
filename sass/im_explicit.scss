@@ -1,0 +1,40 @@
+.container {
+    width: 1000px;
+    margin: 30px auto;
+    background: #ddd;
+
+    display: grid;
+    // 目前只設定到前面4個 item cell
+    grid-template-rows: repeat(2, 150px);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+
+    // 隱式網格  // 應用於不知到底多少行或列於網格中
+    //  其餘4個item cell row設為80px;
+    
+    grid-auto-rows: 80px;
+    grid-auto-flow: row;
+    // grid-auto-flow 預設為 row
+    // 將 隱式網格樣式改為column
+    //grid-auto-flow: column;
+    grid-auto-columns: .5fr; // 設為寬度的一半
+}
+
+.item {
+    padding: 20px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+    background: orangered;
+
+    // 對齊網格項目 Align Grid Item
+    &--4 {
+        background: crimson;
+        grid-row: 2 / span 3; // 遇到問題: 從第一列跑到第二列
+        }
+
+    &--7 {
+        background: pink;
+        grid-column: 1 / -1;
+    }
+}

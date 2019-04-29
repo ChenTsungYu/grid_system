@@ -1,0 +1,76 @@
+.container {
+    width: 1000px;
+    margin: 30px auto;
+    background: #ddd;
+
+    display: grid;
+    // 目前只設定到前面4個 item cell
+    //grid-template-rows: repeat(2, 150px);
+    //grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+     
+    grid-auto-rows: 80px;
+    // grid-auto-flow: row;
+    grid-auto-columns: .5fr; // 設為寬度的一半
+   
+    // 增加密集度 dense ，將空出的網格填滿
+     grid-auto-flow: row dense;
+
+    
+
+
+    //  在單一個網格內進行移動  align  grid to grid areas 
+    // 調整 item 垂直位置  align-items默認: stretch;
+    // align-items: stretch || center || end || start
+    //align-items: stretch;
+    //align-items: end;
+
+    // 調整 item 水平位置  justify-items 
+    // flexbox 無 justify-items;  但有 justify-content
+    //  justify-items: stretch ||  center  || end || start
+    // justify-items: stretch;
+
+    //  align  grid track to grid container
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2,  100px);
+    height: 1000px;
+
+    // 將整個網格移動     // 概念和flexbox雷同
+
+    //  水平移動
+    // justify-content: center || end || start || space-between 
+    //   || space-around  ||  space-evenly
+    justify-content: center;
+
+    // 垂直移動
+    align-content: center;
+
+}
+
+.item {
+    padding: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+    background: orangered;
+
+    // 對齊網格項目 Align Grid Item
+    &--4 {
+        background: crimson;
+        grid-row: 2 / span 3; // 遇到問題: 從第一列跑到第二列
+        
+        // 調整單一個 item cell 垂直位置
+        //align-self: start;
+
+        // 調整單一個 item cell 水平位置
+       // justify-self: start;
+    }
+    &--6{
+        background: lightcoral;
+        grid-row: 2 / span 2 ;
+    }
+    &--7 {
+        background: pink;
+        grid-column: 1 / -1;
+    }
+}
