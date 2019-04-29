@@ -1,20 +1,5 @@
-.header{
-    // 標題橫跨所有網格
-    grid-column: 1 / -1;
-}
-.sidebar{
-    grid-column: 4 / 5;
-    grid-row: 2 / span  2; 
-}
-.main-content{
-    grid-column: 1 / span 3;
-}
-.footer{
-    grid-column: 1 / -1; 
-}
-
 // 命名網格線  naming grid line
-// 使用 [] 進行命名
+// 使用 [] 進行命名代替數值
 
 .challenge{
     width: 1000px;
@@ -38,7 +23,7 @@
 .header{
     // 標題橫跨所有網格
     //grid-column: 1 / -1;
-    grid-column: 1 / grid-end;
+    grid-column:  1 / grid-end;
 }
 .sidebar{
     //grid-column: 4 / 5;
