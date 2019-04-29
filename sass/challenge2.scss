@@ -1,0 +1,59 @@
+// 命名網格區域 naming grid area
+// 使用 grid-template-areas: "name name..." 進行命名
+// 給予每個網格名稱，在依照網格名稱填入該位置
+// 注意: 每個網格都一定要命名
+.challenge {
+    width: 1000px;
+    margin: 30px auto;
+
+    display: grid;
+    grid-template-rows: 100px 200px 400px 100px;
+
+    grid-template-columns: repeat(3, 1fr) 200px;
+    grid-gap: 30px;
+
+    // 作法1
+    /*grid-template-areas: "head head head head" 
+                                    "box box box side"
+                                    "main main main side"
+                                    "foot foot foot foot" ; */
+//做法2
+    grid-template-areas: 
+        ". head head ."
+        "box-1 box-2 box-3 side"
+        "main main main side"
+        "foot foot foot foot";
+
+    &>* {
+        background: orangered;
+        padding: 20px;
+        color: white;
+        font-size: 30px;
+        font-family: sans-serif;
+    }
+}
+
+.header {
+    // 標題橫跨所有網格
+    //grid-column: 1 / -1;
+    grid-area: head;
+}
+
+.sidebar {
+    //grid-column: 4 / 5;
+    //grid-row: 2 / span  2; 
+    grid-area: side;
+}
+.small-box-1{grid-area: box-1;}
+.small-box-2{grid-area: box-2;}
+.small-box-3{grid-area: box-3;}
+
+.main-content {
+    //grid-column: 1 / span 3;
+    grid-area: main;
+}
+
+.footer {
+    // grid-column: 1 / -1; 
+    grid-area: foot;
+}

@@ -1,0 +1,16 @@
+.challenge {
+  width: 1000px;
+  margin: 30px auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100px 200px 400px 100px;
+  grid-template-rows: 100px 200px 400px 100px;
+  -ms-grid-columns: (1fr)[3] 200px;
+  grid-template-columns: repeat(3, 1fr) 200px;
+  grid-gap: 30px; }
+  .challenge > * {
+    background: orangered;
+    padding: 20px;
+    color: white;
+    font-size: 30px;
+    font-family: sans-serif; }

@@ -1,0 +1,108 @@
+.container {
+    background: #eee;
+    width: 1000px;
+    margin: 30px auto;
+
+    //track語法:  定義兩行三列 
+    display: grid;
+     //作法1
+   /* grid-template-rows: 150px 150px;
+    grid-template-columns: 150px 150px 150px;
+    */
+     // 做法2:
+     /*grid-template-rows: repeat(2,150px);
+     grid-template-columns: repeat(3,150px);*/
+
+     // 做法3: 第3列寬度100px
+ /* grid-template-rows: repeat(2,150px) ;
+     grid-template-columns: repeat(2,150px) 200px;*/
+
+      // 做法4: 配合fr填滿剩餘空間
+      /*grid-template-rows: repeat(2,150px) ;
+      grid-template-columns: repeat(2,150px) 1fr;*/
+
+      // 做法5: 將所有空間填滿且平均分配
+    grid-template-rows: repeat(2,150px) ;
+      grid-template-columns: repeat(3,1fr);
+
+    // 做法6: 將所有空間填滿且依 fr 比例分配
+    /*grid-template-rows: repeat(2,150px) ;
+    grid-template-columns: 1fr 2fr 1fr;*/
+
+    // 做法7: 將所有空間填滿且 百分比 與  fr 的比例分配
+   /* grid-template-rows: repeat(2,150px) ;
+    grid-template-columns:50% 1fr 1fr;*/
+
+    /* gutter */
+   // grid-row-gap: 30px;
+    //grid-column-gap: 50px;
+
+    //若行、列間隔相同
+    grid-gap: 50px;
+}
+
+.item {
+    padding: 20px;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: white;
+    &--1 {
+        background: orangered;
+        // 定位網格項目
+        // grid line
+       /* grid-row-start: 2;  // 移至第2行
+        grid-row-start: 3; // 移至第3行
+        grid-column-start: 2;  // 移至第2列
+        grid-column-start: 3; // 移至第3列*/
+
+        /* 簡寫 */
+        /*grid-row: 2 / 2;
+        grid-column: 2 / 3;*/
+
+        // 跨越網格項目
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+       
+        z-index: 10; // 浮現
+    }
+
+    &--2 {
+        background: yellowgreen;
+       // grid-column: 1 / 3;// 等同下面範例
+       // 注意: 有被設置網格屬性的grid cell 即占用該位置，不可利用橫跨的方式改變其位置
+       // span + 要橫跨多少單位的網格
+       grid-column: 2 / span 2;
+       // 若不知道要橫跨所有網格，不需計算網格數量，可以採分母為 -1
+       //grid-column: 1 / -1;
+    }
+
+    &--3 {
+        background: violet;
+        /* 合併網格 */
+        grid-column: 1/ 3;
+        grid-row: 2 / 3;
+    }
+
+    &--4 {
+        background: pink;
+        grid-column: 2 / 4;
+        grid-row: 1/ 2;
+    }
+
+    &--5 {
+        background: blue;
+       /* grid-row: 1 / 2;
+        grid-column: 2 / 4 ;*/
+        // 簡寫
+      //  grid-area: 1 / 3 / 2 / 4;
+
+        // 合併網格
+        grid-area:  1 / 3 / 3 / 4;
+    }
+
+    &--6 {
+        background: brown;
+        grid-row: 2 / 2;
+        grid-column: 3 / 3 ;
+    }
+}
