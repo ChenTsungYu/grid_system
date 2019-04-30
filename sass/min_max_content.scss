@@ -3,11 +3,28 @@
     margin: 30px auto;
     background: #ddd;
 
-   display: grid;
-   grid-template-rows: repeat(2,150px);
-   // max-content做最大寬度且不換行
-grid-template-columns:  max-content 1fr 1fr 1fr;  
+    display: grid;
+    //grid-template-rows: repeat(2,150px);
+    // max-content做最大寬度且不換行
+    // min-content 採用內部元素最小寬度值最大的那個元素的寬度作為最終容器的寬度。
+    //grid-template-columns: max-content 1fr 1fr min-content;
+   // grid-template-rows: repeat(2,min-content);
 
+   // 如果設置固定值，就會一值保留固定值，不會因為內容超過固定值做延伸
+    // grid-template-rows: 150px min-content;
+
+    // Using  minmax function
+   // minmax() 裡面可以放置兩個參數，
+   // 第一個參數表示最小的設定，第二個則是最大的設定
+
+    // minmax() 設置固定值時，在內容尚未超過固定值前，寬或高的值都是固定值，
+    //  若內容高過設定的固定值，則採被內容設定的寬或高
+   // grid-template-rows:repeat(2 ,minmax(150px,min-content));
+   grid-template-rows: repeat(2, minmax(150px,min-content));
+   // 可設百分比(相對父元素)
+  //  grid-template-columns:minmax(200px,300px) repeat(3,1fr);
+    grid-template-columns:minmax(200px,50%) repeat(3,1fr);
+  width: 90%;
 }
 
 .item {
@@ -20,25 +37,32 @@ grid-template-columns:  max-content 1fr 1fr 1fr;
     &--1 {
         background: orangered;
     }
+
     &--2 {
         background: yellowgreen;
     }
+
     &--3 {
         background: blueviolet;
     }
+
     &--4 {
         background: palevioletred;
     }
+
     &--5 {
         background: royalblue;
     }
-    &--6{
-        background:goldenrod;
+
+    &--6 {
+        background: goldenrod;
     }
+
     &--7 {
-        background:crimson;
+        background: crimson;
     }
+
     &--8 {
-        background:darkslategray;
+        background: darkslategray;
     }
 }

@@ -4,12 +4,13 @@
   background: #ddd;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (150px)[2];
-  grid-template-rows: repeat(2, 150px);
-  -ms-grid-columns: -webkit-max-content 1fr 1fr 1fr;
-  -ms-grid-columns: max-content 1fr 1fr 1fr;
-  grid-template-columns: -webkit-max-content 1fr 1fr 1fr;
-  grid-template-columns: max-content 1fr 1fr 1fr; }
+  -ms-grid-rows: (minmax(150px, -webkit-min-content))[2];
+  -ms-grid-rows: (minmax(150px, min-content))[2];
+  grid-template-rows: repeat(2, minmax(150px, -webkit-min-content));
+  grid-template-rows: repeat(2, minmax(150px, min-content));
+  -ms-grid-columns: minmax(200px, 50%) (1fr)[3];
+  grid-template-columns: minmax(200px, 50%) repeat(3, 1fr);
+  width: 90%; }
 
 .item {
   padding: 10px;
