@@ -1,0 +1,44 @@
+.container {
+    width: 1000px;
+    margin: 30px auto;
+    background: #ddd;
+
+   display: grid;
+   grid-template-rows: repeat(2,150px);
+   // max-content做最大寬度且不換行
+grid-template-columns:  max-content 1fr 1fr 1fr;  
+
+}
+
+.item {
+    padding: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+    background: orangered;
+
+    &--1 {
+        background: orangered;
+    }
+    &--2 {
+        background: yellowgreen;
+    }
+    &--3 {
+        background: blueviolet;
+    }
+    &--4 {
+        background: palevioletred;
+    }
+    &--5 {
+        background: royalblue;
+    }
+    &--6{
+        background:goldenrod;
+    }
+    &--7 {
+        background:crimson;
+    }
+    &--8 {
+        background:darkslategray;
+    }
+}

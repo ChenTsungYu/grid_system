@@ -1,0 +1,35 @@
+.container {
+  width: 1000px;
+  margin: 30px auto;
+  background: #ddd;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (150px)[2];
+  grid-template-rows: repeat(2, 150px);
+  -ms-grid-columns: -webkit-max-content 1fr 1fr 1fr;
+  -ms-grid-columns: max-content 1fr 1fr 1fr;
+  grid-template-columns: -webkit-max-content 1fr 1fr 1fr;
+  grid-template-columns: max-content 1fr 1fr 1fr; }
+
+.item {
+  padding: 10px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 30px;
+  background: orangered; }
+  .item--1 {
+    background: orangered; }
+  .item--2 {
+    background: yellowgreen; }
+  .item--3 {
+    background: blueviolet; }
+  .item--4 {
+    background: palevioletred; }
+  .item--5 {
+    background: royalblue; }
+  .item--6 {
+    background: goldenrod; }
+  .item--7 {
+    background: crimson; }
+  .item--8 {
+    background: darkslategray; }
