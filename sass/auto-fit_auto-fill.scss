@@ -1,0 +1,53 @@
+.container {
+    width: 1000px;
+    margin: 30px auto;
+    background: #ddd;
+
+    display: grid;
+    // Using   auto-fit_auto-fill
+    grid-template-rows:repeat(2 ,minmax(150px,min-content));
+
+    // 實際上有 10個列 ( 1000 / 100 )
+    grid-template-columns: repeat(auto-fill,100px);
+    //grid-template-columns: repeat(auto-fit,100px);
+}
+
+.item {
+    padding: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+    background: orangered;
+
+    &--1 {
+        background: orangered;
+    }
+
+    &--2 {
+        background: yellowgreen;
+    }
+
+    &--3 {
+        background: blueviolet;
+    }
+
+    &--4 {
+        background: palevioletred;
+    }
+
+    &--5 {
+        background: royalblue;
+    }
+
+    &--6 {
+        background: goldenrod;
+    }
+
+    &--7 {
+        background: crimson;
+    }
+
+    &--8 {
+        background: darkslategray;
+    }
+}
